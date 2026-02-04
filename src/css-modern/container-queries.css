@@ -1,0 +1,212 @@
+/**
+ * Container Queries
+ * 
+ * Modern responsive design using CSS Container Queries.
+ * Allows components to respond to their container size rather than viewport.
+ */
+
+/* ======================================
+ * Container Types
+ * ====================================== */
+
+/**
+ * Container with inline-size queries (width-based)
+ * Most common type for responsive components
+ */
+.uk-container-query {
+    container-type: inline-size;
+}
+
+/**
+ * Named containers for specific targeting
+ */
+.uk-container-card {
+    container-type: inline-size;
+    container-name: card;
+}
+
+.uk-container-section {
+    container-type: inline-size;
+    container-name: section;
+}
+
+.uk-container-grid {
+    container-type: inline-size;
+    container-name: grid;
+}
+
+/**
+ * Size container for both dimensions
+ */
+.uk-container-size {
+    container-type: size;
+}
+
+/* ======================================
+ * Container Query Utilities
+ * Responsive classes based on container size
+ * ====================================== */
+
+/**
+ * Small container (>= 400px)
+ */
+@container (min-width: 400px) {
+    .uk-cq-s\:visible { display: block !important; }
+    .uk-cq-s\:hidden { display: none !important; }
+    .uk-cq-s\:text-left { text-align: left !important; }
+    .uk-cq-s\:text-center { text-align: center !important; }
+    .uk-cq-s\:text-right { text-align: right !important; }
+}
+
+/**
+ * Medium container (>= 640px)
+ */
+@container (min-width: 640px) {
+    .uk-cq-m\:visible { display: block !important; }
+    .uk-cq-m\:hidden { display: none !important; }
+    .uk-cq-m\:text-left { text-align: left !important; }
+    .uk-cq-m\:text-center { text-align: center !important; }
+    .uk-cq-m\:text-right { text-align: right !important; }
+    
+    /* Grid adjustments in medium containers */
+    .uk-cq-m\:grid-2 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/**
+ * Large container (>= 960px)
+ */
+@container (min-width: 960px) {
+    .uk-cq-l\:visible { display: block !important; }
+    .uk-cq-l\:hidden { display: none !important; }
+    .uk-cq-l\:text-left { text-align: left !important; }
+    .uk-cq-l\:text-center { text-align: center !important; }
+    .uk-cq-l\:text-right { text-align: right !important; }
+    
+    /* Grid adjustments in large containers */
+    .uk-cq-l\:grid-3 {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .uk-cq-l\:grid-4 {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+/**
+ * Extra large container (>= 1200px)
+ */
+@container (min-width: 1200px) {
+    .uk-cq-xl\:visible { display: block !important; }
+    .uk-cq-xl\:hidden { display: none !important; }
+    
+    /* Grid adjustments in xl containers */
+    .uk-cq-xl\:grid-5 {
+        grid-template-columns: repeat(5, 1fr);
+    }
+    
+    .uk-cq-xl\:grid-6 {
+        grid-template-columns: repeat(6, 1fr);
+    }
+}
+
+/* ======================================
+ * Fluid Typography with Container Queries
+ * ====================================== */
+
+/**
+ * Text scales based on container size
+ */
+@container (min-width: 400px) {
+    .uk-cq-text-scale {
+        font-size: clamp(1rem, 2cqi, 1.25rem);
+    }
+    
+    .uk-cq-heading-scale h1,
+    .uk-cq-heading-scale .uk-h1 {
+        font-size: clamp(1.5rem, 4cqi, 2.5rem);
+    }
+    
+    .uk-cq-heading-scale h2,
+    .uk-cq-heading-scale .uk-h2 {
+        font-size: clamp(1.25rem, 3cqi, 2rem);
+    }
+}
+
+/* ======================================
+ * Card Component with Container Queries
+ * Example of a component adapting to container size
+ * ====================================== */
+
+/**
+ * Card that adapts based on its container
+ */
+.uk-card-responsive {
+    container-type: inline-size;
+    display: flex;
+    flex-direction: column;
+    gap: var(--uk-space-default);
+}
+
+/* Horizontal layout in wider containers */
+@container (min-width: 500px) {
+    .uk-card-responsive {
+        flex-direction: row;
+        align-items: center;
+    }
+    
+    .uk-card-responsive > .uk-card-media {
+        flex-shrink: 0;
+        width: 40%;
+    }
+    
+    .uk-card-responsive > .uk-card-body {
+        flex: 1;
+    }
+}
+
+/* ======================================
+ * Grid with Container Queries
+ * Responsive grid that adapts to container, not viewport
+ * ====================================== */
+
+.uk-grid-container-responsive {
+    container-type: inline-size;
+    display: grid;
+    gap: var(--uk-space-default);
+    grid-template-columns: 1fr;
+}
+
+@container (min-width: 480px) {
+    .uk-grid-container-responsive {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@container (min-width: 768px) {
+    .uk-grid-container-responsive {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@container (min-width: 1024px) {
+    .uk-grid-container-responsive {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+/* ======================================
+ * Container Query Units (cqi)
+ * Spacing that scales with container
+ * ====================================== */
+
+.uk-cq-padding-responsive {
+    container-type: inline-size;
+    padding: clamp(1rem, 3cqi, 3rem);
+}
+
+.uk-cq-gap-responsive {
+    container-type: inline-size;
+    gap: clamp(0.5rem, 2cqi, 2rem);
+}

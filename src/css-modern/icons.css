@@ -1,0 +1,290 @@
+/**
+ * Modern CSS-Only Icons
+ * 
+ * Icon utilities that minimize or eliminate JS requirements.
+ * Uses CSS masks, emoji, and SVG data URIs.
+ */
+
+/* ======================================
+ * Icon Base
+ * ====================================== */
+
+.uk-icon-modern {
+    display: inline-block;
+    width: 1.25rem;
+    height: 1.25rem;
+    vertical-align: middle;
+}
+
+/* Size modifiers */
+.uk-icon-small { width: 1rem; height: 1rem; }
+.uk-icon-medium { width: 1.5rem; height: 1.5rem; }
+.uk-icon-large { width: 2rem; height: 2rem; }
+.uk-icon-xlarge { width: 3rem; height: 3rem; }
+
+/* ======================================
+ * CSS Mask Icons
+ * Allows color customization via currentColor
+ * ====================================== */
+
+.uk-icon-mask {
+    display: inline-block;
+    width: 1.25rem;
+    height: 1.25rem;
+    background-color: currentColor;
+    mask-size: contain;
+    mask-repeat: no-repeat;
+    mask-position: center;
+    vertical-align: middle;
+}
+
+/* Common icon shapes using CSS masks with inline SVG */
+
+.uk-icon-close {
+    mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath fill='none' stroke='%23000' stroke-width='2' d='M3 3l14 14M17 3L3 17'/%3E%3C/svg%3E");
+}
+
+.uk-icon-check {
+    mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath fill='none' stroke='%23000' stroke-width='2' d='M4 10l4 4 8-8'/%3E%3C/svg%3E");
+}
+
+.uk-icon-chevron-down {
+    mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath fill='none' stroke='%23000' stroke-width='2' d='M5 7l5 5 5-5'/%3E%3C/svg%3E");
+}
+
+.uk-icon-chevron-up {
+    mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath fill='none' stroke='%23000' stroke-width='2' d='M15 13l-5-5-5 5'/%3E%3C/svg%3E");
+}
+
+.uk-icon-chevron-left {
+    mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath fill='none' stroke='%23000' stroke-width='2' d='M13 5l-5 5 5 5'/%3E%3C/svg%3E");
+}
+
+.uk-icon-chevron-right {
+    mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath fill='none' stroke='%23000' stroke-width='2' d='M7 15l5-5-5-5'/%3E%3C/svg%3E");
+}
+
+.uk-icon-arrow-up {
+    mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath fill='none' stroke='%23000' stroke-width='2' d='M10 15V5M5 10l5-5 5 5'/%3E%3C/svg%3E");
+}
+
+.uk-icon-arrow-down {
+    mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath fill='none' stroke='%23000' stroke-width='2' d='M10 5v10M15 10l-5 5-5-5'/%3E%3C/svg%3E");
+}
+
+.uk-icon-menu {
+    mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath fill='none' stroke='%23000' stroke-width='2' d='M3 5h14M3 10h14M3 15h14'/%3E%3C/svg%3E");
+}
+
+.uk-icon-search {
+    mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Ccircle cx='8' cy='8' r='5' fill='none' stroke='%23000' stroke-width='2'/%3E%3Cpath fill='none' stroke='%23000' stroke-width='2' d='M12 12l5 5'/%3E%3C/svg%3E");
+}
+
+.uk-icon-user {
+    mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Ccircle cx='10' cy='6' r='3' fill='none' stroke='%23000' stroke-width='2'/%3E%3Cpath fill='none' stroke='%23000' stroke-width='2' d='M4 17a6 6 0 0 1 12 0'/%3E%3C/svg%3E");
+}
+
+.uk-icon-heart {
+    mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath fill='%23000' d='M10 18l-1.45-1.32C3.4 12.36 0 9.28 0 5.5 0 2.42 2.42 0 5.5 0c1.74 0 3.41.81 4.5 2.09C11.09.81 12.76 0 14.5 0 17.58 0 20 2.42 20 5.5c0 3.78-3.4 6.86-8.55 11.18L10 18z'/%3E%3C/svg%3E");
+}
+
+.uk-icon-star {
+    mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath fill='%23000' d='M10 0l2.5 6.5L19 7.5l-5 4.5 1.5 7-5.5-3.5L4 19l1.5-7-5-4.5 6.5-1z'/%3E%3C/svg%3E");
+}
+
+.uk-icon-info {
+    mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Ccircle cx='10' cy='10' r='8' fill='none' stroke='%23000' stroke-width='2'/%3E%3Cpath fill='%23000' d='M10 6a1 1 0 1 1 0-2 1 1 0 0 1 0 2zm0 2a1 1 0 0 1 1 1v5a1 1 0 0 1-2 0V9a1 1 0 0 1 1-1z'/%3E%3C/svg%3E");
+}
+
+.uk-icon-warning {
+    mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath fill='%23000' d='M10 0L0 18h20L10 0zm0 5a1 1 0 0 1 1 1v5a1 1 0 0 1-2 0V6a1 1 0 0 1 1-1zm0 9a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3z'/%3E%3C/svg%3E");
+}
+
+.uk-icon-plus {
+    mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath fill='none' stroke='%23000' stroke-width='2' d='M10 5v10M5 10h10'/%3E%3C/svg%3E");
+}
+
+.uk-icon-minus {
+    mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath fill='none' stroke='%23000' stroke-width='2' d='M5 10h10'/%3E%3C/svg%3E");
+}
+
+/* ======================================
+ * Emoji Icons (No JS, universally supported)
+ * ====================================== */
+
+.uk-icon-emoji {
+    display: inline-block;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    line-height: 1;
+    vertical-align: middle;
+}
+
+/* Common emoji mappings via data attributes */
+.uk-icon-emoji[data-icon="home"]::before { content: "🏠"; }
+.uk-icon-emoji[data-icon="star"]::before { content: "⭐"; }
+.uk-icon-emoji[data-icon="heart"]::before { content: "❤️"; }
+.uk-icon-emoji[data-icon="check"]::before { content: "✓"; }
+.uk-icon-emoji[data-icon="close"]::before { content: "✕"; }
+.uk-icon-emoji[data-icon="warning"]::before { content: "⚠️"; }
+.uk-icon-emoji[data-icon="info"]::before { content: "ℹ️"; }
+.uk-icon-emoji[data-icon="success"]::before { content: "✓"; }
+.uk-icon-emoji[data-icon="error"]::before { content: "✕"; }
+.uk-icon-emoji[data-icon="arrow-right"]::before { content: "→"; }
+.uk-icon-emoji[data-icon="arrow-left"]::before { content: "←"; }
+.uk-icon-emoji[data-icon="arrow-up"]::before { content: "↑"; }
+.uk-icon-emoji[data-icon="arrow-down"]::before { content: "↓"; }
+.uk-icon-emoji[data-icon="search"]::before { content: "🔍"; }
+.uk-icon-emoji[data-icon="menu"]::before { content: "☰"; }
+
+/* ======================================
+ * CSS-only animated icons
+ * ====================================== */
+
+/* Spinner using CSS borders */
+.uk-icon-spinner {
+    display: inline-block;
+    width: 1.25rem;
+    height: 1.25rem;
+    border: 2px solid currentColor;
+    border-right-color: transparent;
+    border-radius: 50%;
+    animation: uk-icon-spin 0.8s linear infinite;
+    vertical-align: middle;
+}
+
+@keyframes uk-icon-spin {
+    to { transform: rotate(360deg); }
+}
+
+/* Loading dots */
+.uk-icon-dots {
+    display: inline-flex;
+    gap: 0.25rem;
+    align-items: center;
+    vertical-align: middle;
+}
+
+.uk-icon-dots::before,
+.uk-icon-dots::after {
+    content: '';
+    width: 0.375rem;
+    height: 0.375rem;
+    background: currentColor;
+    border-radius: 50%;
+    animation: uk-icon-dots 1.4s infinite both;
+}
+
+.uk-icon-dots::before {
+    animation-delay: 0s;
+}
+
+.uk-icon-dots::after {
+    animation-delay: 0.7s;
+}
+
+@keyframes uk-icon-dots {
+    0%, 80%, 100% { opacity: 0.3; transform: scale(0.8); }
+    40% { opacity: 1; transform: scale(1); }
+}
+
+/* ======================================
+ * Icon Colors
+ * ====================================== */
+
+.uk-icon-primary { color: var(--uk-color-primary); }
+.uk-icon-secondary { color: var(--uk-color-secondary); }
+.uk-icon-success { color: var(--uk-color-success); }
+.uk-icon-warning { color: var(--uk-color-warning); }
+.uk-icon-danger { color: var(--uk-color-danger); }
+.uk-icon-muted { color: var(--uk-color-text-muted); }
+
+/* ======================================
+ * Icon Button (CSS-only)
+ * ====================================== */
+
+.uk-icon-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    border: none;
+    background: transparent;
+    border-radius: var(--uk-border-radius);
+    color: var(--uk-color-text);
+    cursor: pointer;
+    transition: background-color var(--uk-transition-duration) var(--uk-transition-timing);
+}
+
+.uk-icon-button:hover {
+    background: var(--uk-color-background-muted);
+}
+
+.uk-icon-button:active {
+    background: var(--uk-border-color);
+}
+
+/* ======================================
+ * Decorative Icons (CSS shapes)
+ * Pure CSS geometric shapes for decoration
+ * ====================================== */
+
+.uk-icon-shape-circle {
+    display: inline-block;
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    background: currentColor;
+    vertical-align: middle;
+}
+
+.uk-icon-shape-square {
+    display: inline-block;
+    width: 1rem;
+    height: 1rem;
+    background: currentColor;
+    vertical-align: middle;
+}
+
+.uk-icon-shape-triangle {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border-left: 0.5rem solid transparent;
+    border-right: 0.5rem solid transparent;
+    border-bottom: 0.866rem solid currentColor;
+    vertical-align: middle;
+}
+
+/* ======================================
+ * Accessible Icon Labels
+ * ====================================== */
+
+.uk-icon-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.uk-icon-label-left {
+    flex-direction: row;
+}
+
+.uk-icon-label-right {
+    flex-direction: row-reverse;
+}
+
+/* Screen reader only text */
+.uk-icon-sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}

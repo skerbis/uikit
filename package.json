@@ -12,6 +12,7 @@
     ],
     "scripts": {
         "build-scss": "node build/scss",
+        "build-modern": "node build/modern",
         "compile": "pnpm compile-less && pnpm compile-js",
         "compile-js": "node build/build",
         "compile-less": "pnpm icons && node build/less",

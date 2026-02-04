@@ -16,6 +16,9 @@ const files = [
     'flex.css',
     'container-queries.css',
     'typography.css',
+    'components/button.css',
+    'components/card.css',
+    'components/form.css',
     'icons.css',
     'utilities.css',
 ];

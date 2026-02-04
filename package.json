@@ -4,24 +4,22 @@
     "description": "UIkit is a lightweight and modular front-end framework for developing fast and powerful web interfaces.",
     "version": "3.25.8",
     "main": "dist/js/uikit.js",
-    "style": "dist/css/uikit.css",
+    "style": "dist/css/uikit-modern.css",
     "sideEffects": [
         "*.css",
         "./src/js/*.js",
         "./dist/**/*.js"
     ],
     "scripts": {
-        "build-scss": "node build/scss",
+        "build": "node build/modern",
         "build-modern": "node build/modern",
-        "compile": "pnpm compile-less && pnpm compile-js",
+        "compile": "npm run build && npm run compile-js",
         "compile-js": "node build/build",
-        "compile-less": "pnpm icons && node build/less",
-        "compile-rtl": "pnpm compile-less rtl",
         "icons": "node build/icons",
         "prefix": "node build/prefix",
         "scope": "node build/scope",
         "release": "node build/release",
-        "watch": "chokidar \"**/*.less\" --initial -i \"node_modules\" -c \"node build/less\""
+        "watch": "chokidar \"src/css-modern/**/*.css\" --initial -i \"node_modules\" -c \"npm run build\""
     },
     "repository": {
         "type": "git",
@@ -50,15 +48,12 @@
         "glob": "^13.0.0",
         "globals": "^17.0.0",
         "inquirer": "^13.1.0",
-        "less": "^4.5.1",
         "minimist": "^1.2.8",
-        "number-precision": "^1.6.0",
         "p-limit": "^7.2.0",
         "prettier": "^3.7.4",
         "prettier-plugin-organize-imports": "^4.3.0",
         "rollup": "^4.53.5",
         "rollup-plugin-esbuild": "^6.2.1",
-        "rtlcss": "^4.3.0",
         "semver": "^7.7.3",
         "strip-css-comments": "^5.0.0",
         "svgo": "^4.0.0"

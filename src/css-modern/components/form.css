@@ -1,0 +1,136 @@
+/**
+ * Form Component
+ * Modern form controls with CSS variables
+ */
+
+.uk-input,
+.uk-select,
+.uk-textarea {
+    display: block;
+    width: 100%;
+    padding: var(--uk-space-small) var(--uk-space-default);
+    font-size: var(--uk-font-size-base);
+    line-height: var(--uk-line-height-base);
+    color: var(--uk-color-text);
+    background-color: var(--uk-color-background);
+    border: var(--uk-border-width) solid var(--uk-border-color);
+    border-radius: var(--uk-border-radius);
+    transition: border-color var(--uk-transition-duration) var(--uk-transition-timing);
+}
+
+.uk-input:focus,
+.uk-select:focus,
+.uk-textarea:focus {
+    outline: none;
+    border-color: var(--uk-color-primary);
+}
+
+.uk-input:focus-visible,
+.uk-select:focus-visible,
+.uk-textarea:focus-visible {
+    outline: var(--uk-focus-outline-width) solid var(--uk-focus-outline-color);
+    outline-offset: 0;
+}
+
+.uk-input::placeholder,
+.uk-textarea::placeholder {
+    color: var(--uk-color-text-muted);
+}
+
+/* Select */
+.uk-select {
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath fill='none' stroke='%23666' stroke-width='2' d='M5 7l5 5 5-5'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right var(--uk-space-default) center;
+    background-size: 1rem;
+    padding-right: calc(var(--uk-space-default) * 3);
+}
+
+/* Textarea */
+.uk-textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+/* Checkbox and Radio */
+.uk-checkbox,
+.uk-radio {
+    display: inline-block;
+    width: 1.25rem;
+    height: 1.25rem;
+    margin-right: var(--uk-space-small);
+    vertical-align: middle;
+    cursor: pointer;
+}
+
+/* Form Label */
+.uk-form-label {
+    display: block;
+    margin-bottom: var(--uk-space-small);
+    font-weight: 500;
+    color: var(--uk-color-text-emphasis);
+}
+
+/* Form Controls */
+.uk-form-controls {
+    margin-bottom: var(--uk-space-default);
+}
+
+/* Form Sizes */
+.uk-form-small .uk-input,
+.uk-form-small .uk-select,
+.uk-form-small .uk-textarea,
+.uk-input-small,
+.uk-select-small,
+.uk-textarea-small {
+    padding: var(--uk-space-xsmall) var(--uk-space-small);
+    font-size: var(--uk-font-size-small);
+}
+
+.uk-form-large .uk-input,
+.uk-form-large .uk-select,
+.uk-form-large .uk-textarea,
+.uk-input-large,
+.uk-select-large,
+.uk-textarea-large {
+    padding: var(--uk-space-default) var(--uk-space-medium);
+    font-size: var(--uk-font-size-medium);
+}
+
+/* Form States */
+.uk-form-danger .uk-input,
+.uk-form-danger .uk-select,
+.uk-form-danger .uk-textarea,
+.uk-input-danger,
+.uk-select-danger,
+.uk-textarea-danger {
+    border-color: var(--uk-color-danger);
+}
+
+.uk-form-success .uk-input,
+.uk-form-success .uk-select,
+.uk-form-success .uk-textarea,
+.uk-input-success,
+.uk-select-success,
+.uk-textarea-success {
+    border-color: var(--uk-color-success);
+}
+
+/* Form Stacked */
+.uk-form-stacked .uk-form-label {
+    display: block;
+}
+
+/* Form Horizontal */
+.uk-form-horizontal {
+    display: flex;
+    align-items: center;
+    gap: var(--uk-space-default);
+}
+
+.uk-form-horizontal .uk-form-label {
+    flex-shrink: 0;
+    margin-bottom: 0;
+    width: 200px;
+}

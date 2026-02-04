@@ -1,0 +1,105 @@
+/**
+ * Button Component
+ * Modern button styles with CSS variables
+ */
+
+.uk-button {
+    display: inline-block;
+    padding: var(--uk-space-small) var(--uk-space-default);
+    font-size: var(--uk-font-size-base);
+    line-height: var(--uk-line-height-base);
+    text-align: center;
+    text-decoration: none;
+    vertical-align: middle;
+    cursor: pointer;
+    border: var(--uk-border-width) solid transparent;
+    border-radius: var(--uk-border-radius);
+    background-color: var(--uk-color-background-muted);
+    color: var(--uk-color-text);
+    transition: all var(--uk-transition-duration) var(--uk-transition-timing);
+    user-select: none;
+}
+
+.uk-button:hover {
+    background-color: var(--uk-border-color);
+    text-decoration: none;
+}
+
+.uk-button:focus-visible {
+    outline: var(--uk-focus-outline-width) solid var(--uk-focus-outline-color);
+    outline-offset: var(--uk-focus-outline-offset);
+}
+
+.uk-button:active {
+    transform: translateY(1px);
+}
+
+/* Button Variants */
+.uk-button-primary {
+    background-color: var(--uk-color-primary);
+    color: var(--uk-color-text-inverse);
+    border-color: var(--uk-color-primary);
+}
+
+.uk-button-primary:hover {
+    background-color: var(--uk-color-primary-hover);
+    border-color: var(--uk-color-primary-hover);
+}
+
+.uk-button-secondary {
+    background-color: var(--uk-color-secondary);
+    color: var(--uk-color-text-inverse);
+    border-color: var(--uk-color-secondary);
+}
+
+.uk-button-secondary:hover {
+    background-color: var(--uk-color-secondary-hover);
+    border-color: var(--uk-color-secondary-hover);
+}
+
+.uk-button-success {
+    background-color: var(--uk-color-success);
+    color: var(--uk-color-text-inverse);
+    border-color: var(--uk-color-success);
+}
+
+.uk-button-success:hover {
+    background-color: var(--uk-color-success-hover);
+    border-color: var(--uk-color-success-hover);
+}
+
+.uk-button-danger {
+    background-color: var(--uk-color-danger);
+    color: var(--uk-color-text-inverse);
+    border-color: var(--uk-color-danger);
+}
+
+.uk-button-danger:hover {
+    background-color: var(--uk-color-danger-hover);
+    border-color: var(--uk-color-danger-hover);
+}
+
+/* Button Sizes */
+.uk-button-small {
+    padding: var(--uk-space-xsmall) var(--uk-space-small);
+    font-size: var(--uk-font-size-small);
+}
+
+.uk-button-large {
+    padding: var(--uk-space-default) var(--uk-space-large);
+    font-size: var(--uk-font-size-medium);
+}
+
+/* Button States */
+.uk-button:disabled,
+.uk-button-disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+/* Button Group */
+.uk-button-group {
+    display: inline-flex;
+    gap: var(--uk-space-xsmall);
+}

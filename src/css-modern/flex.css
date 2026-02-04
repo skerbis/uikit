@@ -1,0 +1,269 @@
+/**
+ * Modern Flexbox Utilities
+ * 
+ * Native CSS Flexbox utilities without preprocessors.
+ * Provides flexible, responsive layouts.
+ */
+
+/* ======================================
+ * Base Flex Classes
+ * ====================================== */
+
+.uk-flex-modern {
+    display: flex;
+}
+
+.uk-flex-inline {
+    display: inline-flex;
+}
+
+/* ======================================
+ * Direction
+ * ====================================== */
+
+.uk-flex-row { flex-direction: row; }
+.uk-flex-row-reverse { flex-direction: row-reverse; }
+.uk-flex-column { flex-direction: column; }
+.uk-flex-column-reverse { flex-direction: column-reverse; }
+
+/* ======================================
+ * Wrapping
+ * ====================================== */
+
+.uk-flex-wrap { flex-wrap: wrap; }
+.uk-flex-nowrap { flex-wrap: nowrap; }
+.uk-flex-wrap-reverse { flex-wrap: wrap-reverse; }
+
+/* ======================================
+ * Justify Content (main axis)
+ * ====================================== */
+
+.uk-flex-justify-start { justify-content: flex-start; }
+.uk-flex-justify-end { justify-content: flex-end; }
+.uk-flex-justify-center { justify-content: center; }
+.uk-flex-justify-between { justify-content: space-between; }
+.uk-flex-justify-around { justify-content: space-around; }
+.uk-flex-justify-evenly { justify-content: space-evenly; }
+
+/* ======================================
+ * Align Items (cross axis)
+ * ====================================== */
+
+.uk-flex-align-start { align-items: flex-start; }
+.uk-flex-align-end { align-items: flex-end; }
+.uk-flex-align-center { align-items: center; }
+.uk-flex-align-baseline { align-items: baseline; }
+.uk-flex-align-stretch { align-items: stretch; }
+
+/* ======================================
+ * Align Content (multi-line)
+ * ====================================== */
+
+.uk-flex-content-start { align-content: flex-start; }
+.uk-flex-content-end { align-content: flex-end; }
+.uk-flex-content-center { align-content: center; }
+.uk-flex-content-between { align-content: space-between; }
+.uk-flex-content-around { align-content: space-around; }
+.uk-flex-content-stretch { align-content: stretch; }
+
+/* ======================================
+ * Gap (modern spacing)
+ * ====================================== */
+
+.uk-flex-gap-small { gap: var(--uk-space-small, 0.5rem); }
+.uk-flex-gap { gap: var(--uk-space-default, 1rem); }
+.uk-flex-gap-medium { gap: var(--uk-space-medium, 1.25rem); }
+.uk-flex-gap-large { gap: var(--uk-space-large, 2rem); }
+.uk-flex-gap-xlarge { gap: var(--uk-space-xlarge, 3rem); }
+
+/* Row and column gaps */
+.uk-flex-row-gap-small { row-gap: var(--uk-space-small, 0.5rem); }
+.uk-flex-row-gap { row-gap: var(--uk-space-default, 1rem); }
+.uk-flex-row-gap-medium { row-gap: var(--uk-space-medium, 1.25rem); }
+.uk-flex-row-gap-large { row-gap: var(--uk-space-large, 2rem); }
+
+.uk-flex-column-gap-small { column-gap: var(--uk-space-small, 0.5rem); }
+.uk-flex-column-gap { column-gap: var(--uk-space-default, 1rem); }
+.uk-flex-column-gap-medium { column-gap: var(--uk-space-medium, 1.25rem); }
+.uk-flex-column-gap-large { column-gap: var(--uk-space-large, 2rem); }
+
+/* ======================================
+ * Item Properties
+ * ====================================== */
+
+/* Flex grow */
+.uk-flex-grow-0 { flex-grow: 0; }
+.uk-flex-grow-1 { flex-grow: 1; }
+.uk-flex-grow { flex-grow: 1; }
+
+/* Flex shrink */
+.uk-flex-shrink-0 { flex-shrink: 0; }
+.uk-flex-shrink-1 { flex-shrink: 1; }
+.uk-flex-shrink { flex-shrink: 1; }
+
+/* Flex basis */
+.uk-flex-basis-auto { flex-basis: auto; }
+.uk-flex-basis-0 { flex-basis: 0; }
+.uk-flex-basis-full { flex-basis: 100%; }
+
+/* Flex shorthand */
+.uk-flex-1 { flex: 1 1 0%; }
+.uk-flex-auto { flex: 1 1 auto; }
+.uk-flex-initial { flex: 0 1 auto; }
+.uk-flex-none { flex: none; }
+
+/* Self alignment */
+.uk-flex-self-auto { align-self: auto; }
+.uk-flex-self-start { align-self: flex-start; }
+.uk-flex-self-end { align-self: flex-end; }
+.uk-flex-self-center { align-self: center; }
+.uk-flex-self-stretch { align-self: stretch; }
+.uk-flex-self-baseline { align-self: baseline; }
+
+/* ======================================
+ * Common Patterns
+ * ====================================== */
+
+/* Center content both ways */
+.uk-flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Space between with vertical center */
+.uk-flex-between-center {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Column with gap */
+.uk-flex-column-gap {
+    display: flex;
+    flex-direction: column;
+    gap: var(--uk-space-default, 1rem);
+}
+
+/* Row with gap */
+.uk-flex-row-gap {
+    display: flex;
+    flex-direction: row;
+    gap: var(--uk-space-default, 1rem);
+}
+
+/* ======================================
+ * Responsive Flex Direction
+ * ====================================== */
+
+/* Small and up */
+@media (min-width: 640px) {
+    .uk-flex-s-row { flex-direction: row; }
+    .uk-flex-s-row-reverse { flex-direction: row-reverse; }
+    .uk-flex-s-column { flex-direction: column; }
+    .uk-flex-s-column-reverse { flex-direction: column-reverse; }
+}
+
+/* Medium and up */
+@media (min-width: 960px) {
+    .uk-flex-m-row { flex-direction: row; }
+    .uk-flex-m-row-reverse { flex-direction: row-reverse; }
+    .uk-flex-m-column { flex-direction: column; }
+    .uk-flex-m-column-reverse { flex-direction: column-reverse; }
+}
+
+/* Large and up */
+@media (min-width: 1200px) {
+    .uk-flex-l-row { flex-direction: row; }
+    .uk-flex-l-row-reverse { flex-direction: row-reverse; }
+    .uk-flex-l-column { flex-direction: column; }
+    .uk-flex-l-column-reverse { flex-direction: column-reverse; }
+}
+
+/* ======================================
+ * Responsive Visibility
+ * ====================================== */
+
+@media (max-width: 639px) {
+    .uk-flex-hide-s { display: none !important; }
+}
+
+@media (min-width: 640px) and (max-width: 959px) {
+    .uk-flex-hide-m { display: none !important; }
+}
+
+@media (min-width: 960px) and (max-width: 1199px) {
+    .uk-flex-hide-l { display: none !important; }
+}
+
+@media (min-width: 1200px) {
+    .uk-flex-hide-xl { display: none !important; }
+}
+
+/* ======================================
+ * Order
+ * ====================================== */
+
+.uk-flex-order-first { order: -1; }
+.uk-flex-order-last { order: 999; }
+.uk-flex-order-none { order: 0; }
+.uk-flex-order-1 { order: 1; }
+.uk-flex-order-2 { order: 2; }
+.uk-flex-order-3 { order: 3; }
+.uk-flex-order-4 { order: 4; }
+.uk-flex-order-5 { order: 5; }
+
+/* ======================================
+ * Special Layouts
+ * ====================================== */
+
+/* Sticky header layout */
+.uk-flex-sticky-header {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.uk-flex-sticky-header > header {
+    flex-shrink: 0;
+}
+
+.uk-flex-sticky-header > main {
+    flex: 1;
+}
+
+.uk-flex-sticky-header > footer {
+    flex-shrink: 0;
+}
+
+/* Split layout - 50/50 */
+.uk-flex-split {
+    display: flex;
+    gap: var(--uk-space-default, 1rem);
+}
+
+.uk-flex-split > * {
+    flex: 1;
+}
+
+/* Responsive split - stacks on mobile */
+@media (max-width: 639px) {
+    .uk-flex-split-responsive {
+        flex-direction: column;
+    }
+}
+
+/* ======================================
+ * Equal Height Columns
+ * ====================================== */
+
+.uk-flex-equal-height {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--uk-space-default, 1rem);
+}
+
+.uk-flex-equal-height > * {
+    flex: 1 1 0%;
+    min-width: 250px;
+}

@@ -1,15 +1,73 @@
 [![uikit banner](https://cloud.githubusercontent.com/assets/321047/21769911/474d7d9e-d681-11e6-9fe0-d95f8ccfd3a9.jpg)](https://getuikit.com/)
 
-# UIkit
+# UIkit Modern
 
 [![Discord](https://img.shields.io/badge/chat-on%20discord-7289da.svg)](https://discord.gg/NEt4Pv7)
 [![jsdelivr](https://data.jsdelivr.com/v1/package/npm/uikit/badge?style=rounded)](https://www.jsdelivr.com/package/npm/uikit)
 
-UIkit is a lightweight and modular front-end framework for developing fast and powerful web interfaces.
+**A modern, CSS-only framework** for developing fast and powerful web interfaces.
 
-* [Homepage](https://getuikit.com) - Learn more about UIkit
-* [@getuikit](https://twitter.com/getuikit) - Get the latest buzz on Twitter
-* [Discord Chat](https://discord.gg/NEt4Pv7) - Join our developer chat on Discord.
+UIkit has been completely rebuilt using modern CSS features - no LESS or SCSS preprocessors required!
+
+## ✨ Key Features
+
+- **🎨 CSS Custom Properties** - Runtime theming without rebuilds
+- **🌙 Dark Mode** - Automatic with `prefers-color-scheme`
+- **📦 Container Queries** - Component-responsive design
+- **📝 Fluid Typography** - `clamp()` for breakpoint-less scaling
+- **🎯 Native Grid & Flexbox** - Modern layouts with `gap`
+- **🎭 CSS-Only Icons** - Minimal JavaScript requirements
+- **🧩 Modular** - Cherry-pick only what you need
+- **⚡ Zero Preprocessors** - Pure CSS, no build tools needed
+
+[Learn more about modern features →](MODERN_FEATURES.md)
+
+## 🚀 Quick Start
+
+### Via CDN
+
+```html
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@latest/dist/css/uikit-modern.min.css">
+```
+
+### Via NPM
+
+```bash
+npm install uikit
+```
+
+```html
+<link rel="stylesheet" href="node_modules/uikit/dist/css/uikit-modern.min.css">
+```
+
+### Cherry-Picking Components
+
+Import only what you need for optimal performance:
+
+```css
+/* Custom build */
+@import "uikit/src/css-modern/variables.css";
+@import "uikit/src/css-modern/grid.css";
+@import "uikit/src/css-modern/components/button.css";
+```
+
+[Complete cherry-picking guide →](src/css-modern/CHERRY_PICKING.md)
+
+## 📦 Build from Source
+
+```bash
+# Clone the repository
+git clone https://github.com/skerbis/uikit.git
+cd uikit
+
+# Install dependencies
+npm install
+
+# Build CSS
+npm run build
+
+# Output: dist/css/uikit-modern.css (64 KB) and uikit-modern.min.css (41 KB)
+```
 
 ---
 
@@ -23,27 +81,20 @@ UIkit is a lightweight and modular front-end framework for developing fast and p
 
 ---
 
-## Getting started
+## 📚 Documentation
 
-You have the following options to get UIkit:
+- [Modern Features Guide](MODERN_FEATURES.md) - Complete feature documentation
+- [Cherry-Picking Guide](src/css-modern/CHERRY_PICKING.md) - Modular import system
+- [Implementation Summary](IMPLEMENTATION_SUMMARY.md) - Technical details
+- [Examples](examples/) - Interactive demos
 
-- Download the [latest release](https://github.com/uikit/uikit/releases/latest) with pre-built CSS and JS.
-- Install with [npm](https://npmjs.com) to get all source files as they are available on GitHub: ```npm install uikit```
-- Install with [yarn](https://yarnpkg.com/) to get all source files as they are available on GitHub: ```yarn add uikit```
-- Install with [pnpm](https://pnpm.io/) to get all source files as they are available on GitHub: ```pnpm add uikit```
-- Directly load UIkit from [jsDelivr](https://www.jsdelivr.com): https://www.jsdelivr.com/package/npm/uikit
-- Clone the repo to get all source files including build scripts: `git clone git@github.com:uikit/uikit.git`
+## 🌐 Resources
 
-## Developers
+* [Homepage](https://getuikit.com) - Learn more about UIkit
+* [@getuikit](https://twitter.com/getuikit) - Get the latest buzz on Twitter
+* [Discord Chat](https://discord.gg/NEt4Pv7) - Join our developer chat
 
-To always have the latest development version of UIkit, even before a release, you may want to use npm or yarn with the `dev` tag.
-
-- Using npm: ```npm install uikit@dev```
-- Using yarn: ```yarn add uikit@dev```
-- Using pnpm: ```pnpm add uikit@dev```
-- Using [cdn](cdn.jsdelivr.net): https://cdn.jsdelivr.net/npm/uikit@dev
-
-## Contributing
+## 🤝 Contributing
 
 Finding bugs, sending pull requests or improving our docs - any contribution is welcome and highly appreciated. To get started, head over to our [contribution guidelines](CONTRIBUTING.md). Thanks!
 

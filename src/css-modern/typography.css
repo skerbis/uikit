@@ -1,0 +1,312 @@
+/**
+ * Modern Typography
+ * 
+ * Fluid typography using clamp() for smooth scaling
+ * without breakpoints (breakpoint-less design).
+ */
+
+/* ======================================
+ * Base Typography
+ * ====================================== */
+
+.uk-typography-modern {
+    font-family: var(--uk-font-family);
+    font-size: var(--uk-font-size-base);
+    line-height: var(--uk-line-height-base);
+    color: var(--uk-color-text, #525252);
+}
+
+/* Apply to body for global styling */
+body.uk-modern {
+    font-family: var(--uk-font-family);
+    font-size: var(--uk-font-size-base);
+    line-height: var(--uk-line-height-base);
+    color: var(--uk-color-text, #525252);
+    background-color: var(--uk-color-background, #ffffff);
+}
+
+/* ======================================
+ * Fluid Headings with clamp()
+ * Scales smoothly without media queries
+ * ====================================== */
+
+.uk-h1-modern,
+h1.uk-modern {
+    font-size: var(--uk-font-size-2xlarge);
+    line-height: 1.2;
+    font-weight: 700;
+    color: var(--uk-color-text-emphasis, #262626);
+    margin-top: 0;
+    margin-bottom: var(--uk-space-medium, 1.25rem);
+}
+
+.uk-h2-modern,
+h2.uk-modern {
+    font-size: var(--uk-font-size-xlarge);
+    line-height: 1.3;
+    font-weight: 700;
+    color: var(--uk-color-text-emphasis, #262626);
+    margin-top: var(--uk-space-large, 2rem);
+    margin-bottom: var(--uk-space-default, 1rem);
+}
+
+.uk-h3-modern,
+h3.uk-modern {
+    font-size: var(--uk-font-size-large);
+    line-height: 1.4;
+    font-weight: 600;
+    color: var(--uk-color-text-emphasis, #262626);
+    margin-top: var(--uk-space-medium, 1.25rem);
+    margin-bottom: var(--uk-space-default, 1rem);
+}
+
+.uk-h4-modern,
+h4.uk-modern {
+    font-size: var(--uk-font-size-medium);
+    line-height: 1.4;
+    font-weight: 600;
+    color: var(--uk-color-text-emphasis, #262626);
+    margin-top: var(--uk-space-medium, 1.25rem);
+    margin-bottom: var(--uk-space-small, 0.5rem);
+}
+
+.uk-h5-modern,
+h5.uk-modern {
+    font-size: var(--uk-font-size-base);
+    line-height: 1.5;
+    font-weight: 600;
+    color: var(--uk-color-text-emphasis, #262626);
+    margin-top: var(--uk-space-default, 1rem);
+    margin-bottom: var(--uk-space-small, 0.5rem);
+}
+
+.uk-h6-modern,
+h6.uk-modern {
+    font-size: var(--uk-font-size-small);
+    line-height: 1.5;
+    font-weight: 600;
+    color: var(--uk-color-text, #525252);
+    margin-top: var(--uk-space-default, 1rem);
+    margin-bottom: var(--uk-space-small, 0.5rem);
+}
+
+/* ======================================
+ * Display Headings
+ * Extra large headings for hero sections
+ * ====================================== */
+
+.uk-heading-display-1 {
+    font-size: clamp(3rem, 6vw + 2rem, 6rem);  /* 48-96px */
+    line-height: 1.1;
+    font-weight: 800;
+    color: var(--uk-color-text-emphasis, #262626);
+    letter-spacing: -0.02em;
+}
+
+.uk-heading-display-2 {
+    font-size: clamp(2.5rem, 5vw + 1.5rem, 5rem);  /* 40-80px */
+    line-height: 1.15;
+    font-weight: 700;
+    color: var(--uk-color-text-emphasis, #262626);
+    letter-spacing: -0.015em;
+}
+
+.uk-heading-display-3 {
+    font-size: clamp(2rem, 4vw + 1rem, 4rem);  /* 32-64px */
+    line-height: 1.2;
+    font-weight: 700;
+    color: var(--uk-color-text-emphasis, #262626);
+}
+
+/* ======================================
+ * Text Sizes
+ * ====================================== */
+
+.uk-text-2xlarge { font-size: var(--uk-font-size-2xlarge); }
+.uk-text-xlarge { font-size: var(--uk-font-size-xlarge); }
+.uk-text-large { font-size: var(--uk-font-size-large); }
+.uk-text-medium { font-size: var(--uk-font-size-medium); }
+.uk-text-base { font-size: var(--uk-font-size-base); }
+.uk-text-small { font-size: var(--uk-font-size-small); }
+
+/* Extra small for captions */
+.uk-text-xsmall {
+    font-size: clamp(0.75rem, 0.5vw + 0.65rem, 0.8125rem);  /* 12-13px */
+}
+
+/* ======================================
+ * Fluid Line Heights
+ * ====================================== */
+
+.uk-line-height-tight { line-height: 1.25; }
+.uk-line-height-snug { line-height: 1.375; }
+.uk-line-height-normal { line-height: 1.5; }
+.uk-line-height-relaxed { line-height: 1.625; }
+.uk-line-height-loose { line-height: 2; }
+
+/* ======================================
+ * Font Weights
+ * ====================================== */
+
+.uk-font-thin { font-weight: 100; }
+.uk-font-extralight { font-weight: 200; }
+.uk-font-light { font-weight: 300; }
+.uk-font-normal { font-weight: 400; }
+.uk-font-medium { font-weight: 500; }
+.uk-font-semibold { font-weight: 600; }
+.uk-font-bold { font-weight: 700; }
+.uk-font-extrabold { font-weight: 800; }
+.uk-font-black { font-weight: 900; }
+
+/* ======================================
+ * Text Colors
+ * ====================================== */
+
+.uk-text-color { color: var(--uk-color-text); }
+.uk-text-emphasis { color: var(--uk-color-text-emphasis); }
+.uk-text-muted { color: var(--uk-color-text-muted); }
+.uk-text-inverse { color: var(--uk-color-text-inverse); }
+.uk-text-primary { color: var(--uk-color-primary); }
+.uk-text-secondary { color: var(--uk-color-secondary); }
+.uk-text-success { color: var(--uk-color-success); }
+.uk-text-warning { color: var(--uk-color-warning); }
+.uk-text-danger { color: var(--uk-color-danger); }
+
+/* ======================================
+ * Letter Spacing
+ * ====================================== */
+
+.uk-tracking-tighter { letter-spacing: -0.05em; }
+.uk-tracking-tight { letter-spacing: -0.025em; }
+.uk-tracking-normal { letter-spacing: 0; }
+.uk-tracking-wide { letter-spacing: 0.025em; }
+.uk-tracking-wider { letter-spacing: 0.05em; }
+.uk-tracking-widest { letter-spacing: 0.1em; }
+
+/* ======================================
+ * Text Transform
+ * ====================================== */
+
+.uk-text-uppercase { text-transform: uppercase; }
+.uk-text-lowercase { text-transform: lowercase; }
+.uk-text-capitalize { text-transform: capitalize; }
+.uk-text-normal-case { text-transform: none; }
+
+/* ======================================
+ * Text Alignment
+ * ====================================== */
+
+.uk-text-left { text-align: left; }
+.uk-text-center { text-align: center; }
+.uk-text-right { text-align: right; }
+.uk-text-justify { text-align: justify; }
+
+/* ======================================
+ * Text Decoration
+ * ====================================== */
+
+.uk-text-underline { text-decoration: underline; }
+.uk-text-line-through { text-decoration: line-through; }
+.uk-text-no-underline { text-decoration: none; }
+
+/* ======================================
+ * Fluid Paragraph Spacing
+ * ====================================== */
+
+.uk-paragraph-modern {
+    margin-bottom: var(--uk-space-default, 1rem);
+    line-height: var(--uk-line-height-base, 1.5);
+}
+
+.uk-paragraph-modern:last-child {
+    margin-bottom: 0;
+}
+
+/* Lead paragraph */
+.uk-lead-modern {
+    font-size: var(--uk-font-size-medium);
+    line-height: 1.6;
+    color: var(--uk-color-text);
+}
+
+/* ======================================
+ * Responsive Font Size (container-based)
+ * Uses container query units
+ * ====================================== */
+
+.uk-text-responsive {
+    font-size: clamp(1rem, 2cqi, 1.5rem);
+}
+
+.uk-heading-responsive {
+    font-size: clamp(1.5rem, 5cqi, 3rem);
+}
+
+/* ======================================
+ * Measure (optimal reading width)
+ * ====================================== */
+
+.uk-measure {
+    max-width: 65ch;  /* ~65 characters for optimal readability */
+}
+
+.uk-measure-narrow {
+    max-width: 45ch;
+}
+
+.uk-measure-wide {
+    max-width: 80ch;
+}
+
+/* ======================================
+ * Prose - Beautiful article typography
+ * ====================================== */
+
+.uk-prose-modern {
+    max-width: 65ch;
+    font-size: var(--uk-font-size-base);
+    line-height: 1.7;
+    color: var(--uk-color-text);
+}
+
+.uk-prose-modern > * + * {
+    margin-top: var(--uk-space-default, 1rem);
+}
+
+.uk-prose-modern h1,
+.uk-prose-modern h2,
+.uk-prose-modern h3 {
+    margin-top: var(--uk-space-large, 2rem);
+    margin-bottom: var(--uk-space-default, 1rem);
+}
+
+.uk-prose-modern a {
+    color: var(--uk-color-primary);
+    text-decoration: underline;
+    text-underline-offset: 0.2em;
+}
+
+.uk-prose-modern a:hover {
+    color: var(--uk-color-primary-hover);
+}
+
+.uk-prose-modern code {
+    font-size: 0.9em;
+    padding: 0.125em 0.25em;
+    background: var(--uk-color-background-muted);
+    border-radius: var(--uk-border-radius-small);
+}
+
+.uk-prose-modern pre {
+    padding: var(--uk-space-default);
+    background: var(--uk-color-background-muted);
+    border-radius: var(--uk-border-radius);
+    overflow-x: auto;
+}
+
+.uk-prose-modern blockquote {
+    padding-left: var(--uk-space-default);
+    border-left: 4px solid var(--uk-border-color);
+    font-style: italic;
+    color: var(--uk-color-text-muted);
+}

@@ -1,0 +1,35 @@
+/**
+ * UIKit Modern - Modular CSS Framework
+ * 
+ * Import only what you need for optimal performance.
+ * 
+ * Full import (everything):
+ *   @import "uikit-modern-full.css";
+ * 
+ * Cherry-pick (custom build):
+ *   @import "variables.css";
+ *   @import "components/button.css";
+ *   @import "components/card.css";
+ */
+
+/* Core - Always Required */
+@import "variables.css";
+
+/* Layout Systems - Optional, choose what you need */
+@import "grid.css";
+@import "flex.css";
+@import "container-queries.css";
+
+/* Typography - Optional */
+@import "typography.css";
+
+/* Components - Cherry-pick as needed */
+@import "components/button.css";
+@import "components/card.css";
+@import "components/form.css";
+
+/* Icons - Optional */
+@import "icons.css";
+
+/* Utilities - Optional */
+@import "utilities.css";

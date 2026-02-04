@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UIKit Modern CSS - Demo</title>
+    <link rel="stylesheet" href="../dist/css/uikit-modern.css">
+    <style>
+        /* Demo-specific styles */
+        .demo-section {
+            padding: var(--uk-space-xlarge) 0;
+            border-bottom: 1px solid var(--uk-border-color);
+        }
+        
+        .demo-box {
+            padding: var(--uk-space-default);
+            background: var(--uk-color-background-muted);
+            border-radius: var(--uk-border-radius);
+            margin-bottom: var(--uk-space-default);
+        }
+        
+        .color-swatch {
+            width: 60px;
+            height: 60px;
+            border-radius: var(--uk-border-radius);
+            border: 1px solid var(--uk-border-color);
+        }
+    </style>
+</head>
+<body class="uk-modern">
+    <!-- Header -->
+    <header class="demo-section">
+        <div class="uk-container-modern">
+            <h1 class="uk-heading-display-1">UIKit Modern CSS</h1>
+            <p class="uk-lead-modern">A showcase of modern CSS features without preprocessors</p>
+            
+            <!-- Theme Toggle Demo -->
+            <div class="uk-flex-modern uk-flex-gap uk-margin-top">
+                <button onclick="document.body.className='uk-modern'" 
+                        class="uk-padding uk-border-rounded uk-transition">
+                    Auto (System)
+                </button>
+                <button onclick="document.body.className='uk-modern uk-light'" 
+                        class="uk-padding uk-border-rounded uk-transition">
+                    ☀️ Light Mode
+                </button>
+                <button onclick="document.body.className='uk-modern uk-dark'" 
+                        class="uk-padding uk-border-rounded uk-transition">
+                    🌙 Dark Mode
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Fluid Typography -->
+    <section class="demo-section">
+        <div class="uk-container-modern">
+            <h2 class="uk-h2-modern">Fluid Typography with clamp()</h2>
+            <p>Resize your browser to see smooth font scaling without breakpoints.</p>
+            
+            <div class="demo-box">
+                <h1 class="uk-h1-modern">Heading 1 - Fluid Scale</h1>
+                <h2 class="uk-h2-modern">Heading 2 - Fluid Scale</h2>
+                <h3 class="uk-h3-modern">Heading 3 - Fluid Scale</h3>
+                <p class="uk-lead-modern">Lead paragraph with fluid sizing</p>
+                <p>Regular paragraph text</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modern Grid -->
+    <section class="demo-section">
+        <div class="uk-container-modern">
+            <h2 class="uk-h2-modern">CSS Grid - Auto-fit Layout</h2>
+            <p>Grid automatically adjusts columns based on available space.</p>
+            
+            <div class="uk-grid-modern uk-grid-auto-fit uk-grid-gap-medium">
+                <div class="demo-box">Item 1</div>
+                <div class="demo-box">Item 2</div>
+                <div class="demo-box">Item 3</div>
+                <div class="demo-box">Item 4</div>
+                <div class="demo-box">Item 5</div>
+                <div class="demo-box">Item 6</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Flexbox -->
+    <section class="demo-section">
+        <div class="uk-container-modern">
+            <h2 class="uk-h2-modern">Modern Flexbox with Gap</h2>
+            <p>Native gap support without margins or negative margins.</p>
+            
+            <div class="uk-flex-modern uk-flex-wrap uk-flex-gap-medium">
+                <div class="demo-box uk-flex-1">Flex Item 1</div>
+                <div class="demo-box uk-flex-1">Flex Item 2</div>
+                <div class="demo-box uk-flex-1">Flex Item 3</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Container Queries -->
+    <section class="demo-section">
+        <div class="uk-container-modern">
+            <h2 class="uk-h2-modern">Container Queries</h2>
+            <p>Component responds to container size, not viewport. Resize the containers below.</p>
+            
+            <div class="uk-grid-modern uk-grid-2">
+                <div>
+                    <h3 class="uk-h3-modern">Small Container (300px)</h3>
+                    <div style="width: 300px; resize: horizontal; overflow: auto; border: 2px dashed var(--uk-border-color);">
+                        <div class="uk-card-responsive">
+                            <div style="background: var(--uk-color-primary); color: white; padding: var(--uk-space-default);">
+                                Image
+                            </div>
+                            <div class="demo-box">
+                                <h4>Card Title</h4>
+                                <p>Resize this container to see the layout change!</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="uk-h3-modern">Large Container (600px)</h3>
+                    <div style="width: 600px; resize: horizontal; overflow: auto; border: 2px dashed var(--uk-border-color);">
+                        <div class="uk-card-responsive">
+                            <div style="background: var(--uk-color-primary); color: white; padding: var(--uk-space-default);">
+                                Image
+                            </div>
+                            <div class="demo-box">
+                                <h4>Card Title</h4>
+                                <p>Layout changes at 500px container width, independent of viewport!</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CSS-Only Icons -->
+    <section class="demo-section">
+        <div class="uk-container-modern">
+            <h2 class="uk-h2-modern">CSS-Only Icons</h2>
+            <p>Icons without JavaScript using CSS masks and emoji.</p>
+            
+            <div class="demo-box">
+                <h3 class="uk-h4-modern">CSS Mask Icons (colored via currentColor)</h3>
+                <div class="uk-flex-modern uk-flex-gap-large uk-margin-top">
+                    <span class="uk-icon-mask uk-icon-check uk-icon-large" style="color: var(--uk-color-success);"></span>
+                    <span class="uk-icon-mask uk-icon-close uk-icon-large" style="color: var(--uk-color-danger);"></span>
+                    <span class="uk-icon-mask uk-icon-search uk-icon-large" style="color: var(--uk-color-primary);"></span>
+                    <span class="uk-icon-mask uk-icon-menu uk-icon-large"></span>
+                    <span class="uk-icon-mask uk-icon-heart uk-icon-large" style="color: var(--uk-color-danger);"></span>
+                    <span class="uk-icon-mask uk-icon-star uk-icon-large" style="color: var(--uk-color-warning);"></span>
+                </div>
+            </div>
+            
+            <div class="demo-box uk-margin-top">
+                <h3 class="uk-h4-modern">Animated Icons (Pure CSS)</h3>
+                <div class="uk-flex-modern uk-flex-gap-large uk-margin-top">
+                    <span class="uk-icon-spinner uk-icon-large"></span>
+                    <span class="uk-icon-dots uk-icon-large"></span>
+                </div>
+            </div>
+            
+            <div class="demo-box uk-margin-top">
+                <h3 class="uk-h4-modern">Emoji Icons (No JS, works everywhere)</h3>
+                <div class="uk-flex-modern uk-flex-gap uk-margin-top">
+                    <span class="uk-icon-emoji" data-icon="home"></span>
+                    <span class="uk-icon-emoji" data-icon="star"></span>
+                    <span class="uk-icon-emoji" data-icon="heart"></span>
+                    <span class="uk-icon-emoji" data-icon="search"></span>
+                    <span class="uk-icon-emoji" data-icon="arrow-right"></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Color System -->
+    <section class="demo-section">
+        <div class="uk-container-modern">
+            <h2 class="uk-h2-modern">Neutral Color Palette</h2>
+            <p>Professional, accessible color system with dark mode support.</p>
+            
+            <div class="uk-grid-modern uk-grid-auto-fit-small uk-grid-gap">
+                <div>
+                    <div class="color-swatch" style="background: var(--uk-color-text-emphasis);"></div>
+                    <small>Text Emphasis</small>
+                </div>
+                <div>
+                    <div class="color-swatch" style="background: var(--uk-color-text);"></div>
+                    <small>Text</small>
+                </div>
+                <div>
+                    <div class="color-swatch" style="background: var(--uk-color-text-muted);"></div>
+                    <small>Text Muted</small>
+                </div>
+                <div>
+                    <div class="color-swatch" style="background: var(--uk-color-primary);"></div>
+                    <small>Primary</small>
+                </div>
+                <div>
+                    <div class="color-swatch" style="background: var(--uk-color-success);"></div>
+                    <small>Success</small>
+                </div>
+                <div>
+                    <div class="color-swatch" style="background: var(--uk-color-warning);"></div>
+                    <small>Warning</small>
+                </div>
+                <div>
+                    <div class="color-swatch" style="background: var(--uk-color-danger);"></div>
+                    <small>Danger</small>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Utilities -->
+    <section class="demo-section">
+        <div class="uk-container-modern">
+            <h2 class="uk-h2-modern">Utility Classes</h2>
+            <p>Common utilities using CSS custom properties.</p>
+            
+            <div class="uk-grid-modern uk-grid-2 uk-grid-gap-large">
+                <div class="demo-box uk-box-shadow-medium uk-border-rounded">
+                    With shadow and rounded corners
+                </div>
+                <div class="demo-box uk-background-primary">
+                    Primary background
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="demo-section">
+        <div class="uk-container-modern uk-text-center">
+            <p class="uk-text-muted">
+                UIKit Modern CSS - Built with modern web standards<br>
+                No preprocessors • No build tools required • CSS-only
+            </p>
+        </div>
+    </footer>
+</body>
+</html>

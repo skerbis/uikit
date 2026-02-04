@@ -1,0 +1,156 @@
+/**
+ * UIKit Modern CSS
+ * 
+ * A modern, CSS-only version of UIKit framework featuring:
+ * - CSS custom properties (no preprocessor needed)
+ * - Native CSS Grid and Flexbox
+ * - Container queries for true component-responsive design
+ * - Fluid typography with clamp() (breakpoint-less)
+ * - Dark mode support with prefers-color-scheme
+ * - Minimal JavaScript requirements
+ * - Modern browser APIs
+ * 
+ * This is fully compatible with existing UIKit markup.
+ * You can use this alongside or instead of the compiled LESS/SCSS versions.
+ * 
+ * @version 4.0.0-modern
+ * @license MIT
+ */
+
+/* ======================================
+ * Core Variables
+ * Must be loaded first for all other files
+ * ====================================== */
+@import "variables.css";
+
+/* ======================================
+ * Layout Systems
+ * Modern layout utilities
+ * ====================================== */
+@import "grid.css";
+@import "flex.css";
+@import "container-queries.css";
+
+/* ======================================
+ * Typography
+ * Fluid, responsive typography
+ * ====================================== */
+@import "typography.css";
+
+/* ======================================
+ * Components
+ * Minimal JS, CSS-first components
+ * ====================================== */
+@import "icons.css";
+@import "utilities.css";
+
+/* ======================================
+ * Base Resets
+ * Modern CSS reset
+ * ====================================== */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    -webkit-text-size-adjust: 100%;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+    margin: 0;
+    font-family: var(--uk-font-family);
+    font-size: var(--uk-font-size-base);
+    line-height: var(--uk-line-height-base);
+    color: var(--uk-color-text);
+    background-color: var(--uk-color-background);
+}
+
+/* ======================================
+ * Modern Focus Styles
+ * Better accessibility with :focus-visible
+ * ====================================== */
+
+:focus {
+    outline: none;
+}
+
+:focus-visible {
+    outline: var(--uk-focus-outline-width) solid var(--uk-focus-outline-color);
+    outline-offset: var(--uk-focus-outline-offset);
+}
+
+/* ======================================
+ * Reduced Motion Support
+ * Respects user preferences
+ * ====================================== */
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/* ======================================
+ * Print Styles
+ * ====================================== */
+
+@media print {
+    *,
+    *::before,
+    *::after {
+        background: transparent !important;
+        color: #000 !important;
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+    
+    a,
+    a:visited {
+        text-decoration: underline;
+    }
+    
+    a[href]::after {
+        content: " (" attr(href) ")";
+    }
+    
+    abbr[title]::after {
+        content: " (" attr(title) ")";
+    }
+    
+    pre,
+    blockquote {
+        border: 1px solid #999;
+        page-break-inside: avoid;
+    }
+    
+    thead {
+        display: table-header-group;
+    }
+    
+    tr,
+    img {
+        page-break-inside: avoid;
+    }
+    
+    p,
+    h2,
+    h3 {
+        orphans: 3;
+        widows: 3;
+    }
+    
+    h2,
+    h3 {
+        page-break-after: avoid;
+    }
+}

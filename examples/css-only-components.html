@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS-Only Components - UIKit Modern</title>
+    <link rel="stylesheet" href="../dist/css/uikit-modern.css">
+    <style>
+        /* Additional component styles */
+        body {
+            padding: var(--uk-space-xlarge) 0;
+        }
+        
+        /* CSS-only accordion using details/summary */
+        .uk-accordion-modern {
+            border: 1px solid var(--uk-border-color);
+            border-radius: var(--uk-border-radius);
+            overflow: hidden;
+        }
+        
+        .uk-accordion-modern details {
+            border-bottom: 1px solid var(--uk-border-color);
+        }
+        
+        .uk-accordion-modern details:last-child {
+            border-bottom: none;
+        }
+        
+        .uk-accordion-modern summary {
+            padding: var(--uk-space-default);
+            cursor: pointer;
+            background: var(--uk-color-background);
+            transition: background-color var(--uk-transition-duration);
+            user-select: none;
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .uk-accordion-modern summary::-webkit-details-marker {
+            display: none;
+        }
+        
+        .uk-accordion-modern summary::after {
+            content: '';
+            display: block;
+            width: 1rem;
+            height: 1rem;
+            background-color: currentColor;
+            mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath fill='none' stroke='%23000' stroke-width='2' d='M5 7l5 5 5-5'/%3E%3C/svg%3E");
+            transition: transform var(--uk-transition-duration);
+        }
+        
+        .uk-accordion-modern details[open] summary::after {
+            transform: rotate(180deg);
+        }
+        
+        .uk-accordion-modern summary:hover {
+            background: var(--uk-color-background-muted);
+        }
+        
+        .uk-accordion-modern .uk-accordion-content {
+            padding: var(--uk-space-default);
+            background: var(--uk-color-background);
+        }
+        
+        /* CSS-only tabs using radio buttons */
+        .uk-tab-modern {
+            display: flex;
+            border-bottom: 1px solid var(--uk-border-color);
+            gap: var(--uk-space-default);
+        }
+        
+        .uk-tab-modern input[type="radio"] {
+            display: none;
+        }
+        
+        .uk-tab-modern label {
+            padding: var(--uk-space-default);
+            cursor: pointer;
+            border-bottom: 2px solid transparent;
+            transition: all var(--uk-transition-duration);
+            color: var(--uk-color-text-muted);
+        }
+        
+        .uk-tab-modern label:hover {
+            color: var(--uk-color-text);
+        }
+        
+        .uk-tab-modern input[type="radio"]:checked + label {
+            color: var(--uk-color-primary);
+            border-bottom-color: var(--uk-color-primary);
+        }
+        
+        .uk-tab-content {
+            display: none;
+            padding: var(--uk-space-default) 0;
+        }
+        
+        .uk-tab-modern input[type="radio"]:checked ~ .uk-tab-content[data-tab-id] {
+            display: none;
+        }
+        
+        #tab1:checked ~ [data-tab-id="tab1"],
+        #tab2:checked ~ [data-tab-id="tab2"],
+        #tab3:checked ~ [data-tab-id="tab3"] {
+            display: block;
+        }
+        
+        /* CSS-only tooltip */
+        .uk-tooltip-modern {
+            position: relative;
+            display: inline-block;
+        }
+        
+        .uk-tooltip-modern::before {
+            content: attr(data-tooltip);
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%) translateY(-8px);
+            padding: 0.5rem 0.75rem;
+            background: var(--uk-color-text-emphasis);
+            color: var(--uk-color-text-inverse);
+            border-radius: var(--uk-border-radius);
+            font-size: var(--uk-font-size-small);
+            white-space: nowrap;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity var(--uk-transition-duration);
+        }
+        
+        .uk-tooltip-modern::after {
+            content: '';
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 0;
+            border-left: 6px solid transparent;
+            border-right: 6px solid transparent;
+            border-top: 6px solid var(--uk-color-text-emphasis);
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity var(--uk-transition-duration);
+        }
+        
+        .uk-tooltip-modern:hover::before,
+        .uk-tooltip-modern:hover::after {
+            opacity: 1;
+        }
+        
+        /* Cards with hover effects */
+        .uk-card-hover {
+            border: 1px solid var(--uk-border-color);
+            border-radius: var(--uk-border-radius);
+            padding: var(--uk-space-default);
+            transition: all var(--uk-transition-duration) var(--uk-transition-timing);
+            cursor: pointer;
+        }
+        
+        .uk-card-hover:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--uk-shadow-large);
+        }
+        
+        /* CSS-only dropdown using checkbox */
+        .uk-dropdown-modern {
+            position: relative;
+            display: inline-block;
+        }
+        
+        .uk-dropdown-modern input[type="checkbox"] {
+            display: none;
+        }
+        
+        .uk-dropdown-modern label {
+            padding: var(--uk-space-default);
+            background: var(--uk-color-primary);
+            color: var(--uk-color-text-inverse);
+            border-radius: var(--uk-border-radius);
+            cursor: pointer;
+            display: inline-block;
+            user-select: none;
+        }
+        
+        .uk-dropdown-modern-menu {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            margin-top: 0.5rem;
+            background: var(--uk-color-background);
+            border: 1px solid var(--uk-border-color);
+            border-radius: var(--uk-border-radius);
+            box-shadow: var(--uk-shadow-medium);
+            min-width: 200px;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px);
+            transition: all var(--uk-transition-duration);
+            z-index: 1000;
+        }
+        
+        .uk-dropdown-modern input[type="checkbox"]:checked ~ .uk-dropdown-modern-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+        
+        .uk-dropdown-modern-menu a {
+            display: block;
+            padding: var(--uk-space-default);
+            color: var(--uk-color-text);
+            text-decoration: none;
+            transition: background-color var(--uk-transition-duration);
+        }
+        
+        .uk-dropdown-modern-menu a:hover {
+            background: var(--uk-color-background-muted);
+        }
+        
+        /* Demo container */
+        .demo-section {
+            margin-bottom: var(--uk-space-xlarge);
+        }
+    </style>
+</head>
+<body class="uk-modern">
+    <div class="uk-container-modern">
+        <h1 class="uk-heading-display-2">CSS-Only Components</h1>
+        <p class="uk-lead-modern">Interactive components built with pure CSS - no JavaScript required!</p>
+        
+        <!-- Accordion -->
+        <section class="demo-section">
+            <h2 class="uk-h2-modern">CSS-Only Accordion</h2>
+            <p>Using native HTML <code>&lt;details&gt;</code> and <code>&lt;summary&gt;</code> elements.</p>
+            
+            <div class="uk-accordion-modern">
+                <details>
+                    <summary>What is UIKit Modern?</summary>
+                    <div class="uk-accordion-content">
+                        <p>UIKit Modern is a collection of CSS utilities and components that leverage the latest web standards. It's built with CSS custom properties, Grid, Flexbox, and other modern features.</p>
+                    </div>
+                </details>
+                
+                <details>
+                    <summary>Why use CSS-only components?</summary>
+                    <div class="uk-accordion-content">
+                        <p>CSS-only components are more performant, have smaller bundle sizes, and work without JavaScript. They're perfect for progressive enhancement and accessibility.</p>
+                    </div>
+                </details>
+                
+                <details open>
+                    <summary>What browsers are supported?</summary>
+                    <div class="uk-accordion-content">
+                        <p>Modern browsers with support for CSS Custom Properties, Grid, Flexbox gap, and Container Queries. Chrome 105+, Firefox 110+, Safari 16+, Edge 105+.</p>
+                    </div>
+                </details>
+            </div>
+        </section>
+        
+        <!-- Tabs -->
+        <section class="demo-section">
+            <h2 class="uk-h2-modern">CSS-Only Tabs</h2>
+            <p>Using radio buttons and CSS selectors - no JavaScript!</p>
+            
+            <div class="uk-tab-modern">
+                <input type="radio" name="tabs" id="tab1" checked>
+                <label for="tab1">Features</label>
+                
+                <input type="radio" name="tabs" id="tab2">
+                <label for="tab2">Installation</label>
+                
+                <input type="radio" name="tabs" id="tab3">
+                <label for="tab3">Usage</label>
+                
+                <div class="uk-tab-content" data-tab-id="tab1">
+                    <h3>Modern Features</h3>
+                    <ul>
+                        <li>CSS Custom Properties</li>
+                        <li>Dark Mode Support</li>
+                        <li>Container Queries</li>
+                        <li>Fluid Typography</li>
+                        <li>CSS Grid & Flexbox</li>
+                    </ul>
+                </div>
+                
+                <div class="uk-tab-content" data-tab-id="tab2">
+                    <h3>Installation</h3>
+                    <pre><code>npm install uikit
+npm run build-modern</code></pre>
+                    <p>Then include the CSS file in your HTML:</p>
+                    <pre><code>&lt;link rel="stylesheet" href="dist/css/uikit-modern.min.css"&gt;</code></pre>
+                </div>
+                
+                <div class="uk-tab-content" data-tab-id="tab3">
+                    <h3>Usage</h3>
+                    <p>Add the <code>uk-modern</code> class to your body tag:</p>
+                    <pre><code>&lt;body class="uk-modern"&gt;
+  &lt;h1 class="uk-h1-modern"&gt;Hello World&lt;/h1&gt;
+&lt;/body&gt;</code></pre>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Tooltips -->
+        <section class="demo-section">
+            <h2 class="uk-h2-modern">CSS-Only Tooltips</h2>
+            <p>Hover over the elements below:</p>
+            
+            <div class="uk-flex-modern uk-flex-gap-large uk-margin-top">
+                <span class="uk-tooltip-modern uk-padding uk-border uk-border-rounded" data-tooltip="This is a tooltip!">
+                    Hover me
+                </span>
+                <span class="uk-tooltip-modern uk-padding uk-border uk-border-rounded" data-tooltip="Pure CSS tooltip">
+                    Hover me too
+                </span>
+                <span class="uk-tooltip-modern uk-padding uk-border uk-border-rounded" data-tooltip="No JavaScript needed">
+                    And me!
+                </span>
+            </div>
+        </section>
+        
+        <!-- Dropdown -->
+        <section class="demo-section">
+            <h2 class="uk-h2-modern">CSS-Only Dropdown</h2>
+            <p>Click the button to reveal the dropdown (checkbox-based):</p>
+            
+            <div class="uk-dropdown-modern">
+                <input type="checkbox" id="dropdown-toggle">
+                <label for="dropdown-toggle">Open Dropdown</label>
+                <div class="uk-dropdown-modern-menu">
+                    <a href="#action1">Action 1</a>
+                    <a href="#action2">Action 2</a>
+                    <a href="#action3">Action 3</a>
+                    <a href="#divider" style="border-top: 1px solid var(--uk-border-color);">Separated Action</a>
+                </div>
+            </div>
+            
+            <p class="uk-text-muted uk-margin-top">
+                <small>Note: Click outside or uncheck to close. For production, you'd typically use JavaScript to handle outside clicks or the UIKit JS component.</small>
+            </p>
+        </section>
+        
+        <!-- Cards with hover effects -->
+        <section class="demo-section">
+            <h2 class="uk-h2-modern">Hover Effects</h2>
+            <p>CSS-only card hover effects:</p>
+            
+            <div class="uk-grid-modern uk-grid-3 uk-grid-gap-large">
+                <div class="uk-card-hover">
+                    <h3 class="uk-h4-modern">Card 1</h3>
+                    <p>Hover to see the effect</p>
+                </div>
+                
+                <div class="uk-card-hover">
+                    <h3 class="uk-h4-modern">Card 2</h3>
+                    <p>Pure CSS transitions</p>
+                </div>
+                
+                <div class="uk-card-hover">
+                    <h3 class="uk-h4-modern">Card 3</h3>
+                    <p>No JavaScript for styling</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Footer -->
+        <footer class="uk-text-center uk-margin-top-xlarge">
+            <p class="uk-text-muted">
+                All components above work without JavaScript for their core functionality.
+            </p>
+        </footer>
+    </div>
+</body>
+</html>

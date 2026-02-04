@@ -1,0 +1,107 @@
+/**
+ * Card Component
+ * Modern card styles with container query support
+ */
+
+.uk-card {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--uk-color-background);
+    border: var(--uk-border-width) solid var(--uk-border-color);
+    border-radius: var(--uk-border-radius);
+    overflow: hidden;
+    transition: box-shadow var(--uk-transition-duration) var(--uk-transition-timing);
+}
+
+.uk-card-hover:hover {
+    box-shadow: var(--uk-shadow-medium);
+}
+
+/* Card Body */
+.uk-card-body {
+    padding: var(--uk-space-default);
+    flex: 1;
+}
+
+/* Card Header */
+.uk-card-header {
+    padding: var(--uk-space-default);
+    border-bottom: var(--uk-border-width) solid var(--uk-border-color);
+}
+
+/* Card Footer */
+.uk-card-footer {
+    padding: var(--uk-space-default);
+    border-top: var(--uk-border-width) solid var(--uk-border-color);
+}
+
+/* Card Title */
+.uk-card-title {
+    font-size: var(--uk-font-size-large);
+    font-weight: 600;
+    color: var(--uk-color-text-emphasis);
+    margin: 0 0 var(--uk-space-small) 0;
+}
+
+/* Card Badge */
+.uk-card-badge {
+    position: absolute;
+    top: var(--uk-space-default);
+    right: var(--uk-space-default);
+    padding: var(--uk-space-xsmall) var(--uk-space-small);
+    background-color: var(--uk-color-primary);
+    color: var(--uk-color-text-inverse);
+    border-radius: var(--uk-border-radius-small);
+    font-size: var(--uk-font-size-small);
+}
+
+/* Card Variants */
+.uk-card-default {
+    background-color: var(--uk-color-background);
+    box-shadow: var(--uk-shadow-small);
+}
+
+.uk-card-primary {
+    background-color: var(--uk-color-primary);
+    color: var(--uk-color-text-inverse);
+    border-color: var(--uk-color-primary);
+}
+
+.uk-card-secondary {
+    background-color: var(--uk-color-background-muted);
+}
+
+/* Card Media */
+.uk-card-media-top,
+.uk-card-media-bottom,
+.uk-card-media-left,
+.uk-card-media-right {
+    overflow: hidden;
+}
+
+.uk-card-media-top img,
+.uk-card-media-bottom img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Container query responsive card */
+.uk-card-container {
+    container-type: inline-size;
+}
+
+@container (min-width: 500px) {
+    .uk-card-container .uk-card-horizontal {
+        flex-direction: row;
+    }
+    
+    .uk-card-container .uk-card-media-left {
+        flex-shrink: 0;
+        width: 40%;
+    }
+    
+    .uk-card-container .uk-card-body {
+        flex: 1;
+    }
+}

@@ -1,0 +1,220 @@
+/**
+ * Modern Grid Utilities
+ * 
+ * CSS Grid utilities using modern features without preprocessors.
+ * Provides flexible, responsive grid layouts.
+ */
+
+/* ======================================
+ * Base Grid Classes
+ * ====================================== */
+
+.uk-grid-modern {
+    display: grid;
+    gap: var(--uk-space-default, 1rem);
+}
+
+/* ======================================
+ * Column Templates
+ * ====================================== */
+
+.uk-grid-1 { grid-template-columns: 1fr; }
+.uk-grid-2 { grid-template-columns: repeat(2, 1fr); }
+.uk-grid-3 { grid-template-columns: repeat(3, 1fr); }
+.uk-grid-4 { grid-template-columns: repeat(4, 1fr); }
+.uk-grid-5 { grid-template-columns: repeat(5, 1fr); }
+.uk-grid-6 { grid-template-columns: repeat(6, 1fr); }
+
+/* Auto-fit: Responsive without media queries */
+.uk-grid-auto-fit {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.uk-grid-auto-fit-small {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+}
+
+.uk-grid-auto-fit-large {
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+}
+
+/* Auto-fill: Always fills the row */
+.uk-grid-auto-fill {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+}
+
+/* ======================================
+ * Gap Modifiers
+ * ====================================== */
+
+.uk-grid-gap-small { gap: var(--uk-space-small, 0.5rem); }
+.uk-grid-gap-medium { gap: var(--uk-space-medium, 1.25rem); }
+.uk-grid-gap-large { gap: var(--uk-space-large, 2rem); }
+.uk-grid-gap-xlarge { gap: var(--uk-space-xlarge, 3rem); }
+.uk-grid-gap-collapse { gap: 0; }
+
+/* Row and column gaps */
+.uk-grid-row-gap-small { row-gap: var(--uk-space-small, 0.5rem); }
+.uk-grid-row-gap-medium { row-gap: var(--uk-space-medium, 1.25rem); }
+.uk-grid-row-gap-large { row-gap: var(--uk-space-large, 2rem); }
+
+.uk-grid-column-gap-small { column-gap: var(--uk-space-small, 0.5rem); }
+.uk-grid-column-gap-medium { column-gap: var(--uk-space-medium, 1.25rem); }
+.uk-grid-column-gap-large { column-gap: var(--uk-space-large, 2rem); }
+
+/* ======================================
+ * Item Placement
+ * ====================================== */
+
+.uk-grid-item-1-1 { grid-column: span 1; }
+.uk-grid-item-1-2 { grid-column: span 2; }
+.uk-grid-item-1-3 { grid-column: span 3; }
+.uk-grid-item-1-4 { grid-column: span 4; }
+.uk-grid-item-1-5 { grid-column: span 5; }
+.uk-grid-item-1-6 { grid-column: span 6; }
+
+/* Full width */
+.uk-grid-item-full { grid-column: 1 / -1; }
+
+/* ======================================
+ * Alignment
+ * ====================================== */
+
+/* Horizontal alignment */
+.uk-grid-justify-start { justify-content: start; }
+.uk-grid-justify-center { justify-content: center; }
+.uk-grid-justify-end { justify-content: end; }
+.uk-grid-justify-between { justify-content: space-between; }
+.uk-grid-justify-around { justify-content: space-around; }
+.uk-grid-justify-evenly { justify-content: space-evenly; }
+
+/* Vertical alignment */
+.uk-grid-align-start { align-content: start; }
+.uk-grid-align-center { align-content: center; }
+.uk-grid-align-end { align-content: end; }
+.uk-grid-align-stretch { align-content: stretch; }
+
+/* Item alignment */
+.uk-grid-items-start { align-items: start; }
+.uk-grid-items-center { align-items: center; }
+.uk-grid-items-end { align-items: end; }
+.uk-grid-items-stretch { align-items: stretch; }
+
+/* ======================================
+ * Responsive Grids (Viewport-based)
+ * ====================================== */
+
+/* Small and up (phone landscape) */
+@media (min-width: 640px) {
+    .uk-grid-s-1 { grid-template-columns: 1fr; }
+    .uk-grid-s-2 { grid-template-columns: repeat(2, 1fr); }
+    .uk-grid-s-3 { grid-template-columns: repeat(3, 1fr); }
+    .uk-grid-s-4 { grid-template-columns: repeat(4, 1fr); }
+}
+
+/* Medium and up (tablet) */
+@media (min-width: 960px) {
+    .uk-grid-m-1 { grid-template-columns: 1fr; }
+    .uk-grid-m-2 { grid-template-columns: repeat(2, 1fr); }
+    .uk-grid-m-3 { grid-template-columns: repeat(3, 1fr); }
+    .uk-grid-m-4 { grid-template-columns: repeat(4, 1fr); }
+    .uk-grid-m-5 { grid-template-columns: repeat(5, 1fr); }
+}
+
+/* Large and up (desktop) */
+@media (min-width: 1200px) {
+    .uk-grid-l-1 { grid-template-columns: 1fr; }
+    .uk-grid-l-2 { grid-template-columns: repeat(2, 1fr); }
+    .uk-grid-l-3 { grid-template-columns: repeat(3, 1fr); }
+    .uk-grid-l-4 { grid-template-columns: repeat(4, 1fr); }
+    .uk-grid-l-5 { grid-template-columns: repeat(5, 1fr); }
+    .uk-grid-l-6 { grid-template-columns: repeat(6, 1fr); }
+}
+
+/* ======================================
+ * Special Layouts
+ * ====================================== */
+
+/* Masonry-style with auto-flow dense */
+.uk-grid-masonry {
+    grid-auto-flow: dense;
+}
+
+/* Holy Grail Layout */
+.uk-grid-holy-grail {
+    display: grid;
+    grid-template-columns: minmax(150px, 200px) 1fr minmax(150px, 200px);
+    grid-template-rows: auto 1fr auto;
+    min-height: 100vh;
+    gap: var(--uk-space-default, 1rem);
+}
+
+.uk-grid-holy-grail > header {
+    grid-column: 1 / -1;
+}
+
+.uk-grid-holy-grail > footer {
+    grid-column: 1 / -1;
+}
+
+/* Sidebar layout */
+.uk-grid-sidebar {
+    display: grid;
+    grid-template-columns: minmax(200px, 250px) 1fr;
+    gap: var(--uk-space-large, 2rem);
+}
+
+.uk-grid-sidebar-right {
+    grid-template-columns: 1fr minmax(200px, 250px);
+}
+
+/* Responsive sidebar - stacks on mobile */
+@media (max-width: 959px) {
+    .uk-grid-sidebar,
+    .uk-grid-sidebar-right {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ======================================
+ * Subgrid Support
+ * Allows nested grids to participate in parent grid
+ * ====================================== */
+
+.uk-grid-subgrid {
+    display: grid;
+    grid-template-columns: subgrid;
+    grid-template-rows: subgrid;
+}
+
+/* ======================================
+ * Grid Areas (Named regions)
+ * ====================================== */
+
+.uk-grid-template-areas-blog {
+    display: grid;
+    grid-template-columns: 1fr 300px;
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas:
+        "header header"
+        "main sidebar"
+        "footer footer";
+    gap: var(--uk-space-default, 1rem);
+}
+
+.uk-grid-area-header { grid-area: header; }
+.uk-grid-area-main { grid-area: main; }
+.uk-grid-area-sidebar { grid-area: sidebar; }
+.uk-grid-area-footer { grid-area: footer; }
+
+/* Responsive: stack on mobile */
+@media (max-width: 959px) {
+    .uk-grid-template-areas-blog {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "header"
+            "main"
+            "sidebar"
+            "footer";
+    }
+}

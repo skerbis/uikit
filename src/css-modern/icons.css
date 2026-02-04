@@ -124,7 +124,7 @@
 /* Common emoji mappings via data attributes */
 .uk-icon-emoji[data-icon="home"]::before { content: "🏠"; }
 .uk-icon-emoji[data-icon="star"]::before { content: "⭐"; }
-.uk-icon-emoji[data-icon="heart"]::before { content: "❤️"; }
+.uk-icon-emoji[data-icon="heart"]::before { content: "❤"; }
 .uk-icon-emoji[data-icon="check"]::before { content: "✓"; }
 .uk-icon-emoji[data-icon="close"]::before { content: "✕"; }
 .uk-icon-emoji[data-icon="warning"]::before { content: "⚠️"; }

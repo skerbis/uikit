@@ -11,6 +11,19 @@ UIkit is a lightweight and modular front-end framework for developing fast and p
 * [@getuikit](https://twitter.com/getuikit) - Get the latest buzz on Twitter
 * [Discord Chat](https://discord.gg/NEt4Pv7) - Join our developer chat on Discord.
 
+## 🚀 Modern CSS Features
+
+UIkit now includes a modern CSS-only version with cutting-edge features:
+
+- **CSS Custom Properties** - Runtime theming without preprocessors
+- **Dark Mode** - Native `prefers-color-scheme` support
+- **Container Queries** - Component-responsive design
+- **Fluid Typography** - `clamp()` for breakpoint-less scaling
+- **CSS Grid & Flexbox** - Modern layouts with native `gap`
+- **CSS-Only Icons** - Minimal JavaScript requirements
+
+[Learn more about modern features →](MODERN_FEATURES.md)
+
 ---
 
 <p align="center">
